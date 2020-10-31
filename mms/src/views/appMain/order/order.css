@@ -1,0 +1,13 @@
+.ant-breadcrumb{
+    height: 10px;
+    line-height: 2px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.ant-form{
+    margin:  0.9375rem 0;
+}
+.ant-form lable{
+    margin-right: 0.9375rem;
+}

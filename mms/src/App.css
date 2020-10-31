@@ -1,0 +1,35 @@
+/* *{margin: 0;padding: 0;}
+.AppHead {
+  position: absolute;
+  line-height: 3.1875rem;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #2d3a4b;
+} */
+/* 左侧导航栏 */
+/* .AppNav{
+  position: absolute;
+  width: 14.375rem;
+  top: 3.3125rem;
+  left: 0px;
+  bottom: 0px;
+  overflow-y: auto;
+  /* background-color: #545c64; */
+/* } */ 
+/* 右侧主区域 */
+/* .AppMain {
+  position: absolute;
+  top: 3.125rem;
+  left: 14.375rem;
+  right: 0px;
+  bottom: 0px;
+  padding: 10px;
+  overflow-y: auto;
+} */
+html,body{
+  height: 100%;
+}
+.App{
+  height: 100%;
+}
