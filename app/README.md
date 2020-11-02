@@ -19,10 +19,25 @@
 
   ​      webapp：首页、登录、注册、找游记、找攻略、详情页
 
+  （测试账号一：xiaomidi  密码：aaaaaa，
+
+  ​    测试账号二：xiaomidi1 密码：xxxxxx）
+
   ​      mms：首页、登陆、注册
+
+  （测试账号一：xiaomidi  密码：aaaaaa，
+
+  ​    测试账号二：xiaomidi1 密码：xxxxxx）
 
 - 项目页面截图
 
-- 
+- webapp
 
-![](C:\Users\lol\Desktop\新建文件夹 (3)\webapp.png)
+  ![](C:\Users\lol\Desktop\新建文件夹 (3)\webapp.png)
+
+  ![](C:\Users\lol\Desktop\新建文件夹 (3)\webapp2.png)
+
+- mms
+
+  ![](C:\Users\lol\Desktop\新建文件夹 (3)\mms.png)
+
