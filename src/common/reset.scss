@@ -1,3 +1,6 @@
+@function vw($n) {
+    @return ($n * 100 / 750)+vw;
+}
 html,header,main,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,input,figure,figcaption,div,main{
     margin:0;
     padding:0;
@@ -6,7 +9,7 @@ html,header,main,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend
 html,body{
     background-color: #fff;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 h1,h2,h3,h4,h5,h6{
     font-size:16px;
