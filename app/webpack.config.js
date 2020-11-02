@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry:'./src/index.jsx',
-    // output:{
-
-    // }
+    output:{
+        path:path.resolve('./dist'),
+        filename:'js/[name]-[hash:5]-bundle.js',
+    },
     devServer:{
         contentBase:path.join(__dirname,"./public"),
         port:6868

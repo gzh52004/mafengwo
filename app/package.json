@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-react": "^7.12.1",
     "antd-mobile": "^2.3.4",
     "axios": "^0.21.0",
@@ -43,8 +44,8 @@
     "html-webpack-plugin": "^4.5.0",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "webpack": "^5.2.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
