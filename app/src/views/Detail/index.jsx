@@ -4,20 +4,22 @@ import { Icon } from 'antd-mobile';
 import "./index.scss"
 import request from "../../../request"
 let Detail = (props)=>{
-    console.log(props)
     let {id} = props.match.params
     let [state,newState] = useState([])
-    useEffect(async function(){
-        let {data:{data}} = await request.get("/goods/single/" + id)
-        newState(data)
+    useEffect( function(){
+        // let {data:{data}} = await request.get("/goods/single/" + id)
+        let data;
+        request.get("/goods/single/" + id).then(res=>{
+            data = res.data.data
+            newState(data)
+        })
     },[])
-        console.log(state)
     let goto = ()=>{
         props.history.push("/")
     }
-    return (
+    return ( 
         <div>
-            <header>
+            <header id="detail">
                 <h1 onClick={goto.bind(this)}>
                     <img src="/images/logo2.png" alt=""/>
                 </h1>
@@ -29,6 +31,7 @@ let Detail = (props)=>{
             </header>
             <main className="detail">
                 {
+
                     state.map(item=>{
                         return (
                         <div key={item}>
@@ -45,9 +48,9 @@ let Detail = (props)=>{
                             </div>
                             <div className="trip">
                                 <h3>旅游注意事项</h3>
-                                <img src="/images/tour.jpg" alt/>
-                                <img src="/images/tour2.jpg" alt/>
-                                <img src="/images/tour3.jpg" alt/>
+                                <img src="/images/tour.jpg" alt=""/>
+                                <img src="/images/tour2.jpg" alt=""/>
+                                <img src="/images/tour3.jpg" alt=""/>
                             </div>
                         </div>
                         )

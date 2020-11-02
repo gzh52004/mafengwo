@@ -1,7 +1,7 @@
 import React from "react"
 import { Icon , Carousel, WingBlank, ListView } from 'antd-mobile';
 import request from "../../../request"
-
+import {connect} from "react-redux"
 import "./index.scss"
 
     let data1 = [];
@@ -17,6 +17,21 @@ import "./index.scss"
     }
     return dataBlob;
     }
+    const mapStateToProps = function(state){
+      return {
+        ischeck:state.ischeck
+      }
+    }
+    const mapDispatchToProps = function(dispatch){
+      return {
+        dispatch,
+        logout(){
+          dispatch({type:"logout"})
+        }
+      }
+    }
+
+    @connect(mapStateToProps,mapDispatchToProps)
     class Home extends React.Component {
         constructor(props) {
             super(props);
@@ -31,12 +46,14 @@ import "./index.scss"
               arr:[
                 {
                     name:"找攻略",
-                    icon:<Icon type="check-circle" />  
+                    icon:<Icon type="check-circle" />,
+                    path:"/strategy"
                      
                 },
                 {
                     name:"看游记",
-                    icon:<Icon type="check" />  
+                    icon:<Icon type="check" /> ,
+                    path: "/review" 
                 },
                 {
                     name:"问达人",
@@ -70,6 +87,14 @@ import "./index.scss"
           }
           goto(id){
             this.props.history.push("/detail/"+id)
+          }
+          goinlogin = ()=>{
+            this.props.history.push("/login")
+          }
+          change(path){
+            this.props.history.push({
+              pathname:path
+            })
           }
           componentDidMount() {
             setTimeout(() => {
@@ -110,17 +135,18 @@ import "./index.scss"
           }
 
         render(){
+            let {ischeck,logout} = this.props
             const separator = (sectionID, rowID) => (
-      <div
-        key={`${sectionID}-${rowID}`}
-        style={{
-          backgroundColor: '#F5F5F9',
-          height: 8,
-          borderTop: '1px solid #ECECED',
-          borderBottom: '1px solid #ECECED',
-        }}
-      />
-    );
+            <div
+              key={`${sectionID}-${rowID}`}
+              style={{
+                backgroundColor: '#F5F5F9',
+                height: 8,
+                borderTop: '1px solid #ECECED',
+                borderBottom: '1px solid #ECECED',
+              }}
+            />
+          );
     let index = data1.length - 1;
     const row = (rowID) => {
         if (index < 0) {
@@ -162,7 +188,10 @@ import "./index.scss"
                             搜索目的地/攻略/游记
                             <Icon type="search" size={"xxs"} />
                         </div>
-                        <a href="#">登录</a>
+                        {
+                          ischeck ? <a onClick={logout}>退出</a> : <a onClick={this.goinlogin}>登录</a>
+                        }
+                        
                     </header>
                     <main>
                       <section>
@@ -194,7 +223,7 @@ import "./index.scss"
                         {
                             this.state.arr.map(item=>{
                                 return(
-                                    <li key={item.name}>
+                                    <li onClick={this.change.bind(this,item.path)} key={item.name}>
                                         {item.icon}
                                         <span>{item.name}</span>
                                     </li>
@@ -226,4 +255,5 @@ import "./index.scss"
             )
         } 
 }
+
 export default Home
