@@ -42,7 +42,7 @@ import "./index.scss"
             this.state = {
               dataSource,
               isLoading: true,
-              data: ['banner1', 'banner2', 'banner3'],
+              data3: ['banner1', 'banner2', 'banner3'],
               arr:[
                 {
                     name:"找攻略",
@@ -99,7 +99,7 @@ import "./index.scss"
           componentDidMount() {
             setTimeout(() => {
               this.setState({
-                data: ['banner1', 'banner2', 'banner3'],
+                data3: ['banner1', 'banner2', 'banner3'],
               });
             }, 100);
             request.get("/goods/list",{
@@ -154,28 +154,29 @@ import "./index.scss"
         }
         const obj = data1[index--];
         return (
-                <div key={rowID} style={{ padding: '0 15px' }}>
-                    <div
-                    style={{
-                        lineHeight: '50px',
-                        color: '#888',
-                        fontSize: 18,
-                        borderBottom: '1px solid #F6F6F6',
-                        textOverflow:"ellipsis",
-                        whiteSpace:"nowrap",
-                        overflow:"hidden"
-                    }}
-                    >{obj.data.title}</div>
-                    <div style={{ display: '-webkit-box', display: 'flex', padding: '15px 0' }} onClick={this.goto.bind(this,obj._id)}>
-                    <img style={{ height: '64px', marginRight: '15px' }} src={obj.data.image} alt="" />
-                    <div style={{ lineHeight: 1, width:"240px", display:"flex", flexDirection:"column",justifyContent:"space-between"}}>
-                    <div style={{width:"100%",textOverflow:"ellipsis", whiteSpace:"nowrap", overflow:"hidden" , fontWeight: 'bold'}}>{obj.data.content}</div>
-                        <div style={{display:"flex",justifyContent:"space-between"}}><span style={{ fontSize: '14px', color: '#FF6E27' }}>{obj.data_source.user.name}</span>
-                        <img style={{ height: '30px', marginRight: '15px',borderRadius:"50%" }} src={obj.data_source.user.logo} alt="" />
-                        </div>
-                    </div>
-                    </div>
-                </div>
+          obj.data ? <div key={rowID} style={{ padding: '0 15px' }}>
+          <div
+          style={{
+              lineHeight: '50px',
+              color: '#888',
+              fontSize: 18,
+              borderBottom: '1px solid #F6F6F6',
+              textOverflow:"ellipsis",
+              whiteSpace:"nowrap",
+              overflow:"hidden"
+          }}
+          >{obj.data.title}</div>
+          <div style={{ display: '-webkit-box', display: 'flex', padding: '15px 0' }} onClick={this.goto.bind(this,obj._id)}>
+          <img style={{ height: '64px', marginRight: '15px' }} src={obj.data.image} alt="" />
+          <div style={{ lineHeight: 1, width:"240px", display:"flex", flexDirection:"column",justifyContent:"space-between"}}>
+          <div style={{width:"100%",textOverflow:"ellipsis", whiteSpace:"nowrap", overflow:"hidden" , fontWeight: 'bold'}}>{obj.data.content}</div>
+              <div style={{display:"flex",justifyContent:"space-between"}}><span style={{ fontSize: '14px', color: '#FF6E27' }}>{obj.data_source.user.name}</span>
+              <img style={{ height: '30px', marginRight: '15px',borderRadius:"50%" }} src={obj.data_source.user.logo} alt="" />
+              </div>
+          </div>
+          </div>
+      </div> : null
+                
                 );
             };
             return(
@@ -200,8 +201,9 @@ import "./index.scss"
                         <Carousel
                         autoplay={false}
                         infinite
+                        autoplay
                         >
-                        {this.state.data.map(val => (
+                        {this.state.data3.map(val => (
                             <a
                             key={val}
                             style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}

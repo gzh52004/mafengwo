@@ -28,7 +28,7 @@ class Review extends React.Component{
         this.state = {
             dataSource,
             isLoading: true,
-            data: ['banner4', 'banner5', 'banner6','banner7','banner8'],
+            data4: ['banner4', 'banner5', 'banner6','banner7','banner8'],
             imgHeight: 176,
             }   
     }   
@@ -98,30 +98,19 @@ class Review extends React.Component{
               }
               const obj = data1[index--];
               return (
-                      <div key={rowID} className="listbox">
-                          {/* <div
-                          style={{
-                              lineHeight: '50px',
-                              color: '#888',
-                              fontSize: 18,
-                              borderBottom: '1px solid #F6F6F6',
-                              textOverflow:"ellipsis",
-                              whiteSpace:"nowrap",
-                              overflow:"hidden"
-                          }}
-                          >{obj.data.title}</div> */}
-                          <div style={{ display: '-webkit-box', display: 'flex', padding: '15px 0' }} onClick={this.goto.bind(this,obj._id)}>
-                          <div style={{ lineHeight: 1, width:"240px", display:"flex", flexDirection:"column",justifyContent:"space-between"}}>
-                          <div style={{width:"100%",textOverflow:"ellipsis", whiteSpace:"nowrap", overflow:"hidden" , fontWeight: 'bold'}}>{obj.data.content}</div>
-                              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}><span style={{ fontSize: '14px', color: '#FF6E27' }}>{obj.data_source.user.name}</span>
-                                <img style={{ height: '30px', marginRight: '15px',borderRadius:"50%" }} src={obj.data_source.user.logo} alt="" />
-                              </div>
-                          </div>
-                          <div style={{height:"100%" ,width:"100%"}}>
-                            <img style={{width:"100%", height: '100%'}} src={obj.data.image} alt="" />
-                          </div>
-                          </div>
+                  obj ? <div key={rowID} className="listbox">
+                  <div style={{ display: '-webkit-box', display: 'flex', padding: '15px 0' }} onClick={this.goto.bind(this,obj._id)}>
+                  <div style={{ lineHeight: 1, width:"240px", display:"flex", flexDirection:"column",justifyContent:"space-between"}}>
+                  <div style={{width:"100%",textOverflow:"ellipsis", whiteSpace:"nowrap", overflow:"hidden" , fontWeight: 'bold'}}>{obj.data.content}</div>
+                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}><span style={{ fontSize: '14px', color: '#FF6E27' }}>{obj.data_source.user.name}</span>
+                        <img style={{ height: '30px', marginRight: '15px',borderRadius:"50%" }} src={obj.data_source.user.logo} alt="" />
                       </div>
+                  </div>
+                  <div style={{height:"100%" ,width:"100%"}}>
+                    <img style={{width:"100%", height: '100%'}} src={obj.data.image} alt="" />
+                  </div>
+                  </div>
+              </div> : null       
                       );
                   };
         return(
@@ -139,8 +128,9 @@ class Review extends React.Component{
                     <Carousel
                     autoplay={false}
                     infinite
+                    autoplay
                     >
-                    {this.state.data.map(val => (
+                    {this.state.data4.map(val => (
                         <a
                         key={val}
                         style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
