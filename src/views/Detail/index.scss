@@ -1,33 +1,33 @@
 @import "@/common/vw.scss";
-// header{
-//     height: vw(100);
-//     display: flex;
-//     padding: vw(20)!important;
-//     justify-content: space-between;
-//     align-items: center;
-//     h1{
-//         width: vw(180);
-//         img{
-//             width: 100%;
-//         }
-//     }
-//     div{
-//         display: flex;
-//         font-size: 12px;
-//         width: vw(400);
-//         align-items: center;
-//         background: #f3f3f3;
-//         border-radius: 20px;
-//         padding: vw(14);
-//         justify-content: space-between;      
-//         input{
-//             border: 0;
-//             border-radius: vw(20);
-//             background: #f3f3f3;    
-//             padding-left:vw(30)
-//         }
-//     }
-// }
+#detail{
+    height: vw(100);
+    display: flex;
+    padding: vw(20);
+    justify-content: space-between;
+    align-items: center;
+    h1{
+        width: vw(180);
+        img{
+            width: 100%;
+        }
+    }
+    div{
+        display: flex;
+        font-size: 12px;
+        width: vw(400);
+        align-items: center;
+        background: #f3f3f3;
+        border-radius: 20px;
+        padding: vw(14);
+        justify-content: space-between;      
+        input{
+            border: 0;
+            border-radius: vw(20);
+            background: #f3f3f3;    
+            padding-left:vw(30)
+        }
+    }
+}
 .detail{
     img{
         width: 100%;
