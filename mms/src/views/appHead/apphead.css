@@ -1,0 +1,14 @@
+.logo {
+    margin: 0 0.625rem 0.3125rem 2rem;
+  }
+  .company {
+    position: absolute;
+    color: white;
+  }
+  .ant-dropdown-trigger{
+      float: right;
+      margin-right: 0.625rem;
+  }
+  .ant-dropdown-link{
+      color: white;
+  }
